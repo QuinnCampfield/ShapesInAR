@@ -35,6 +35,7 @@ final class ARViewController: ObservableObject {
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = [.horizontal]
         config.environmentTexturing = .automatic
+        config.frameSemantics.insert(.personSegmentationWithDepth)
         
         arView.session.run(config)
     }
